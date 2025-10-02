@@ -1,7 +1,7 @@
 //CORDIC Engine Design
 
 
-module cordic_engine (
+module engine (
     input [31:0] angle,
     input [1:0] sign,
     input angle_valid, clk, rst,
@@ -27,18 +27,12 @@ module cordic_engine (
         if(rst) begin
             current <= IDLE;
             counter <= 5'b0;
-            x_reg <= 32'b0;
-            y_reg <= 32'b0;
-            z_reg <= 32'b0;
-            sine <= 32'bx;
-            cosine <= 32'bx;
+            
         end
         else begin
             current <= next;
-            if(current == COMPUTE) counter <= counter + 1;
-          
-
-
+          if(current != IDLE) counter <= counter + 1;
+          else counter <= 5'b0;
         end
     end
 
@@ -54,7 +48,11 @@ module cordic_engine (
     always@(posedge(clk)) begin
         case (current)
             IDLE: begin
-                
+                x_reg <= 32'b0;
+            y_reg <= 32'b0;
+            z_reg <= 32'b0;
+            sine <= 32'bx;
+            cosine <= 32'bx;
             end
             COMPUTE: begin
                 if(counter == 0) begin
@@ -74,7 +72,6 @@ module cordic_engine (
             DONE: begin
               cosine <= sign[0] ? -x_reg : x_reg;
               sine <= sign[1] ? -y_reg : y_reg;
-              	counter <= 5'b0;
             end 
             default: begin
                 sine <= 32'bx;
