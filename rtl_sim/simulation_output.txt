@@ -1,18 +1,18 @@
-VCD info: dumpfile cordic_tb.vcd opened for output.
-Angle_in=0.000000 | Sine(CORDIC)=-0.000138 | Cos(CORDIC)=1.000000 | Sine(expected)=0.000000 | Cos(expected)=1.000000
-Angle_in=0.010000 | Sine(CORDIC)=0.009862 | Cos(CORDIC)=0.999951 | Sine(expected)=0.010000 | Cos(expected)=0.999950
-Angle_in=-0.010000 | Sine(CORDIC)=-0.009862 | Cos(CORDIC)=0.999951 | Sine(expected)=-0.010000 | Cos(expected)=0.999950
-Angle_in=0.785398 | Sine(CORDIC)=0.706788 | Cos(CORDIC)=0.707426 | Sine(expected)=0.707107 | Cos(expected)=0.707107
-Angle_in=-0.785398 | Sine(CORDIC)=-0.706788 | Cos(CORDIC)=0.707426 | Sine(expected)=-0.707107 | Cos(expected)=0.707107
-Angle_in=1.570796 | Sine(CORDIC)=1.000000 | Cos(CORDIC)=-0.000140 | Sine(expected)=1.000000 | Cos(expected)=0.000000
-Angle_in=-1.570796 | Sine(CORDIC)=-1.000000 | Cos(CORDIC)=-0.000140 | Sine(expected)=-1.000000 | Cos(expected)=0.000000
-Angle_in=2.356194 | Sine(CORDIC)=0.706788 | Cos(CORDIC)=-0.707426 | Sine(expected)=0.707107 | Cos(expected)=-0.707107
-Angle_in=-2.356194 | Sine(CORDIC)=-0.706788 | Cos(CORDIC)=-0.707426 | Sine(expected)=-0.707107 | Cos(expected)=-0.707107
-Angle_in=3.141593 | Sine(CORDIC)=-0.000138 | Cos(CORDIC)=-1.000000 | Sine(expected)=0.000000 | Cos(expected)=-1.000000
-Angle_in=-3.141593 | Sine(CORDIC)=0.000138 | Cos(CORDIC)=-1.000000 | Sine(expected)=-0.000000 | Cos(expected)=-1.000000
-Angle_in=3.999000 | Sine(CORDIC)=-0.755968 | Cos(CORDIC)=-0.654609 | Sine(expected)=-0.756148 | Cos(expected)=-0.654400
-Angle_in=-3.999000 | Sine(CORDIC)=0.755968 | Cos(CORDIC)=-0.654609 | Sine(expected)=0.756148 | Cos(expected)=-0.654400
-Angle_in=-0.001000 | Sine(CORDIC)=-0.000862 | Cos(CORDIC)=1.000000 | Sine(expected)=-0.001000 | Cos(expected)=1.000000
-Angle_in=3.141500 | Sine(CORDIC)=-0.000046 | Cos(CORDIC)=-1.000000 | Sine(expected)=0.000093 | Cos(expected)=-1.000000
-Angle_in=2.718280 | Sine(CORDIC)=0.410531 | Cos(CORDIC)=-0.911847 | Sine(expected)=0.410783 | Cos(expected)=-0.911733
-tb_cordic_top.v:84: $finish called at 5775000 (1ps)
+VCD info: dumpfile cordic.vcd opened for output.
+Angle_in=0.000000 | Sine(CORDIC)=-0.000140 | Cos(CORDIC)=1.000000 | Sine(expected)=0.000000 | Cos(expected)=1.000000
+Angle_in=0.010000 | Sine(CORDIC)=0.009861 | Cos(CORDIC)=0.999951 | Sine(expected)=0.010000 | Cos(expected)=0.999950
+Angle_in=-0.010000 | Sine(CORDIC)=-0.009861 | Cos(CORDIC)=0.999951 | Sine(expected)=-0.010000 | Cos(expected)=0.999950
+Angle_in=0.785398 | Sine(CORDIC)=0.706787 | Cos(CORDIC)=0.707426 | Sine(expected)=0.707107 | Cos(expected)=0.707107
+Angle_in=-0.785398 | Sine(CORDIC)=-0.706787 | Cos(CORDIC)=0.707426 | Sine(expected)=-0.707107 | Cos(expected)=0.707107
+Angle_in=1.570796 | Sine(CORDIC)=0.999999 | Cos(CORDIC)=-0.000141 | Sine(expected)=1.000000 | Cos(expected)=0.000000
+Angle_in=-1.570796 | Sine(CORDIC)=-0.999999 | Cos(CORDIC)=-0.000141 | Sine(expected)=-1.000000 | Cos(expected)=0.000000
+Angle_in=2.356194 | Sine(CORDIC)=0.706787 | Cos(CORDIC)=-0.707426 | Sine(expected)=0.707107 | Cos(expected)=-0.707107
+Angle_in=-2.356194 | Sine(CORDIC)=-0.706787 | Cos(CORDIC)=-0.707426 | Sine(expected)=-0.707107 | Cos(expected)=-0.707107
+Angle_in=3.141593 | Sine(CORDIC)=-0.000140 | Cos(CORDIC)=-1.000000 | Sine(expected)=0.000000 | Cos(expected)=-1.000000
+Angle_in=-3.141593 | Sine(CORDIC)=0.000140 | Cos(CORDIC)=-1.000000 | Sine(expected)=-0.000000 | Cos(expected)=-1.000000
+Angle_in=3.999000 | Sine(CORDIC)=-0.755966 | Cos(CORDIC)=-0.654609 | Sine(expected)=-0.756148 | Cos(expected)=-0.654400
+Angle_in=-3.999000 | Sine(CORDIC)=0.755966 | Cos(CORDIC)=-0.654609 | Sine(expected)=0.756148 | Cos(expected)=-0.654400
+Angle_in=-0.001000 | Sine(CORDIC)=-0.000862 | Cos(CORDIC)=0.999998 | Sine(expected)=-0.001000 | Cos(expected)=1.000000
+Angle_in=3.141500 | Sine(CORDIC)=-0.000042 | Cos(CORDIC)=-0.999997 | Sine(expected)=0.000093 | Cos(expected)=-1.000000
+Angle_in=2.718280 | Sine(CORDIC)=0.410532 | Cos(CORDIC)=-0.911845 | Sine(expected)=0.410783 | Cos(expected)=-0.911733
+tb_cordic_top.v:87: $finish called at 4495000 (1ps)
