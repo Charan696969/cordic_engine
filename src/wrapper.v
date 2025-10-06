@@ -1,22 +1,22 @@
 //wrapper module
 
-module wrapper(input signed [31:0] angle_in,
+module wrapper(input signed [23:0] angle_in,
 input input_valid, clk, rst,
-output reg [31:0] angle_out,
+output reg [23:0] angle_out,
 output reg angle_valid,
 output [1:0]quad_data);
 
-    localparam signed [31:0] PI = 32'b0_11_00100100001111110110101010001;
-  	localparam signed [31:0] MINUS_PI = 32'b1_00_11011011110000001001010101111;
-    localparam signed [31:0] PI_BY_2 = 32'b0_01_10010010000111111011010101001;
-    localparam signed [31:0] MINUS_PI_BY_2 = 32'b1_10_01101101111000000100101010111;
+    localparam signed [23:0] PI = 24'b0_11_001001000011111101101;
+  	localparam signed [23:0] MINUS_PI = 24'b1_00_110110111100000010010;
+    localparam signed [23:0] PI_BY_2 = 24'b0_01_100100100001111110110;
+    localparam signed [23:0] MINUS_PI_BY_2 = 24'b1_10_011011011110000001001;
   
     reg[1:0] quadrant_data;
 
     always@(posedge(clk)) begin
         if(rst) begin
-            quadrant_data <= 2'bxx;
-            angle_out <= 32'bx;
+            quadrant_data <= 2'bx;
+            angle_out <= 24'bx;
             angle_valid <= 1'b0;
         end
         else begin
