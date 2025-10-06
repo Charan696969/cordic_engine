@@ -4,11 +4,11 @@ module tb_cordic_top;
 
     reg clk;
     reg rst;
-    reg [31:0] angle_in;
+    reg [23:0] angle_in;
     reg input_valid;
 
-    wire [31:0] sine;
-    wire [31:0] cosine;
+    wire [23:0] sine;
+    wire [23:0] cosine;
 
     cordic_engine uut (
         .clk(clk),
@@ -21,8 +21,8 @@ module tb_cordic_top;
 
     always #5 clk = ~clk;
 
-    // Q2.29 scale factor
-    real scale = 2.0**29;
+    // Q2.21 scale factor
+    real scale = 2.0**21;
 
     // Test vectors (angles in radians)
     real test_angles [0:15];
@@ -48,30 +48,33 @@ module tb_cordic_top;
     end
 
     integer i;
-    reg [31:0] fixed_angle;
+    reg [23:0] fixed_angle;
     initial begin
-        $dumpfile("cordic_tb.vcd");
+        $dumpfile("cordic.vcd");
         $dumpvars(0, tb_cordic_top);
 
         clk = 0;
         rst = 1;
         input_valid = 0;
-        angle_in = 32'b0;
+        angle_in = 24'b0;
 
         #20;
         rst = 0;
 
         for (i = 0; i < num_tests; i = i + 1) begin
             fixed_angle = $rtoi(test_angles[i] * scale);
+
+            // Apply input
             @(posedge clk);
             angle_in = fixed_angle;
             input_valid = 1;
             @(posedge clk);
             input_valid = 0;
 
-            // Wait for 34 cycles (CORDIC latency N=32)
-            repeat (34) @(posedge clk);
+            // Wait for 26 cycles (CORDIC latency)
+            repeat (26) @(posedge clk);
 
+            // Display result
             $display("Angle_in=%f | Sine(CORDIC)=%f | Cos(CORDIC)=%f | Sine(expected)=%f | Cos(expected)=%f",
                 test_angles[i],
                 $itor($signed(sine)) / scale,
